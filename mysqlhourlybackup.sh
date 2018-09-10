@@ -9,6 +9,8 @@ MYSQL_PASSWORD=password
 MYSQL_HOST=localhost
 MYSQL_DBNAME=--all-databases
 ENCRYPTPASSWORD=encryptionpassword
+BACKUPSTOKEEP=1
+
 
 BACKUP_DIR=/mysqlbackup/hourly
 OUTPUTFILENAME="`hostname -s`_MYSQLBACKUP_`date +%F_%H-%M-%N`"
@@ -38,7 +40,8 @@ echo "ENCRYPTION IN PROGRESS"
 echo "DELETING OLD BACKUPS"
 
       cd $BACKUP_DIR
-      ls -t1 | tail -n +2 | xargs rm
+      ls -t1 | grep *.gz | xargs rm
+      ls -t1 | tail -n +$(($BACKUPSTOKEEP+1)) | xargs rm
 
 
 ################################################################
