@@ -1,4 +1,4 @@
-# Simple bash script to take an encrypted mysql backup hourly#
+# Simple bash script to take an encrypted mysql backup hourly #
 
 copy mysqlhourlybackup.sh into /usr/local/bin
 
