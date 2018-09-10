@@ -11,7 +11,7 @@ MYSQL_DBNAME=--all-databases
 ENCRYPTPASSWORD=encryptionpassword
 
 BACKUP_DIR=/mysqlbackup/hourly
-OUTPUTFILENAME="`hostname -s`_MYSQLBACKUP_`date +%F_%H-%M-%S`"
+OUTPUTFILENAME="`hostname -s`_MYSQLBACKUP_`date +%F_%H-%M-%N`"
 
 
 echo "CHECKING FOR BACKUP DIRECTORY"
@@ -45,4 +45,6 @@ echo "DELETING OLD BACKUPS"
 #   Unencrypt backup file using the following
 ################################################################
 
-#openssl enc -aes-256-cbc -d -in dbname.sql.gz.enc -out dbname.gz -pass pass:*password*
+#openssl enc -aes-256-cbc -d -in dbname.sql.gz.enc -out dbname.gz -pass pass:*encryptionpassword* 
+#gunzip -c dbname.gz > dbname.sql
+
