@@ -3,10 +3,10 @@
 ### Installation
 
 ```sh
-$ cp mysqlhourlybackup.sh into /usr/local/bin
+$ cp mysqlhourlybackup.sh /usr/local/bin
 ```
 ```sh
-chmod 700 /usr/local/bin/mysqlhourlybackup.sh
+chmod +x /usr/local/bin/mysqlhourlybackup.sh
 ```
 
 Edit the variables 
