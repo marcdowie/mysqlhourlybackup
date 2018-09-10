@@ -41,7 +41,7 @@ echo "DELETING OLD BACKUPS"
 
       cd $BACKUP_DIR
       rm $BACKUP_DIR/*.gz
-      ls -t1 | tail -n +$(($BACKUPSTOKEEP+1)) | xargs rm
+      ls -t1 | tail -n +$(($BACKUPSTOKEEP+1)) | xargs rm *.enc
 
 
 ################################################################
