@@ -1,5 +1,4 @@
-# mysqlhourlybackup
-#Simple bash script to take an hourly encrypted backup and keeps only the last backup.#
+# Simple bash script to take an encrypted mysql backup hourly#
 
 copy mysqlhourlybackup.sh into /usr/local/bin
 
