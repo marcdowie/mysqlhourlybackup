@@ -40,7 +40,7 @@ echo "ENCRYPTION IN PROGRESS"
 echo "DELETING OLD BACKUPS"
 
       cd $BACKUP_DIR
-      ls -t1 | grep *.gz | xargs rm
+      rm $BACKUP_DIR/*.gz
       ls -t1 | tail -n +$(($BACKUPSTOKEEP+1)) | xargs rm
 
 
