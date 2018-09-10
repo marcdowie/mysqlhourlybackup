@@ -1,7 +1,7 @@
 #!/bin/sh
 
 ################################################################
-#  Variables
+#  Start Variables
 ################################################################
 
 MYSQL_USER=root
@@ -11,6 +11,10 @@ MYSQL_DBNAME=--all-databases
 BACKUP_DIR=/mysqlbackup/hourly
 ENCRYPTPASSWORD=encryptionpassword
 BACKUPSTOKEEP=3
+
+################################################################
+#  End Variables
+################################################################
 
 echo "CHECKING FOR BACKUP DIRECTORY"
 
@@ -39,7 +43,11 @@ fi
 ################################################################
 #   Unencrypt backup file using the following
 ################################################################
-
+#
 #openssl enc -aes-256-cbc -d -in dbname.sql.gz.enc -out dbname.gz -pass pass:*encryptionpassword*
 #gunzip -c dbname.gz > dbname.sql
+#
+################################################################
+#   Unencrypt backup file using the following
+################################################################
 
