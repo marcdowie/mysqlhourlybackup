@@ -1,8 +1,5 @@
 # mysqlhourlybackup
 Simple bash script to take an hourly encrypted backup and keeps only the last backup.
-## to un-encrypt the backups ##
-
-openssl enc -aes-256-cbc -d -in dbname.sql.gz.enc -out dbname.gz -pass pass:*password*
 
 copy mysqlhourlybackup.sh into /usr/local/bin
 
@@ -17,8 +14,14 @@ set MSQL_USER
 set MYSQL_PASSWORD
 set MYSQL_HOST
 
-# Open Crontab and setup new hourly job#
+# Open Crontab and setup new hourly job #
 
 crontab -e
 
 00 * * * * /usr/local/bin/mysqlhourlybackup.sh >/dev/null 2>&
+
+
+# to un-encrypt the backups #
+
+openssl enc -aes-256-cbc -d -in dbname.sql.gz.enc -out dbname.gz -pass pass:*password*
+
