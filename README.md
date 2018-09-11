@@ -25,7 +25,7 @@ nano /usr/local/bin/mysqlhourlybackup.sh
 crontab -e
 ```
 
-00 * * * * /usr/local/bin/mysqlhourlybackup.sh >/dev/null 2>&
+00 * * * * /usr/local/bin/mysqlhourlybackup.sh >/dev/null 2>&1
 
 
 ## Unencrypt the backups 
