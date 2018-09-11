@@ -1,6 +1,6 @@
 # Simple bash script to take an encrypted mysql backup hourly.
 
-### Installation
+### Installation.
 
 ```sh
 $ cp mysqlhourlybackup.sh /usr/local/bin
@@ -19,7 +19,7 @@ nano /usr/local/bin/mysqlhourlybackup.sh
 * set MYSQL_HOST
 * set ENCRYPTPASSWORD
 
-## Open Crontab and setup new hourly job ##
+## Open Crontab and setup new hourly job.
 
 ```sh
 crontab -e
@@ -28,9 +28,8 @@ crontab -e
 00 * * * * /usr/local/bin/mysqlhourlybackup.sh >/dev/null 2>&1
 
 
-## Unencrypt the backups 
+## Details on how to unencrypt the backups. 
 
 ```sh
-openssl enc -aes-256-cbc -d -in *dbname.enc* -out *dbname.gz* -pass pass:*encryptionpassword* 
-gunzip -c *dbname.gz* > *dbname.sql*
+openssl enc -aes-256-cbc -d -in *dbname.enc* -out database.gz -pass pass:*encryptionpassword*  && gunzip -c database.gz > *dbname.sql*
 ```
