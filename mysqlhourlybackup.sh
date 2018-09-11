@@ -16,6 +16,8 @@ BACKUPSTOKEEP=3
 #  End Variables
 ################################################################
 
+OUTPUTFILENAME="`hostname -s`_MYSQLBACKUP_`date +%F_%H-%M-%S`"
+
 echo "CHECKING FOR BACKUP DIRECTORY"
 
         if [ ! -d $BACKUP_DIR ]; then
