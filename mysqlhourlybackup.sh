@@ -46,8 +46,7 @@ fi
 #   Unencrypt backup file using the following
 ################################################################
 #
-#openssl enc -aes-256-cbc -d -in dbname.sql.gz.enc -out dbname.gz -pass pass:*encryptionpassword*
-#gunzip -c dbname.gz > dbname.sql
+#openssl enc -aes-256-cbc -d -in *dbname.enc* -out database.gz -pass pass:*encryptionpassword*  && gunzip -c database.gz > *dbname.sql*
 #
 ################################################################
 #   Unencrypt backup file using the following
