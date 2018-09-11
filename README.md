@@ -14,7 +14,7 @@ Edit the variables
 ```sh
 nano /usr/local/bin/mysqlhourlybackup.sh
 ```
-* set MSQL_USER
+* set MYSQL_USER
 * set MYSQL_PASSWORD
 * set MYSQL_HOST
 * set ENCRYPTPASSWORD
